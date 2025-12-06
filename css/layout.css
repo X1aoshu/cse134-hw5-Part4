@@ -351,3 +351,32 @@ main {
   opacity: 1;
 }
 
+#backToTop {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent, #f2442e);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0,0,0,.35);
+  display: none;
+  z-index: 40;
+}
+
+#backToTop.show {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#backToTop:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+
