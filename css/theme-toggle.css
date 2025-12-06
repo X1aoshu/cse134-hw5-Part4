@@ -1,6 +1,7 @@
 :root {
   --page-bg: #c9c5c5;
   --ink: #222;
+   --page-ink: #222;
   --muted: #555;
   --rule: #ddd;
   --card: #f7f7f7;
@@ -39,7 +40,8 @@
 
 :root[data-theme="ocean"] {
   --page-bg: #0f172a;       
-  --ink: #e0f2fe;           
+  --ink: #e0f2fe;     
+  --page-ink: #e0f2fe;      
   --muted: #bae6fd;
   --rule: #1e293b;
   --card: #020617;

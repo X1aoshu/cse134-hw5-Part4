@@ -121,6 +121,7 @@
         <div class="theme-presets">
           <button type="button" data-theme-choice="light">Light</button>
           <button type="button" data-theme-choice="dark">Dark</button>
+          <button type="button" data-theme-choice="ocean">Ocean</button>
         </div>
       </div>
       <hr>
