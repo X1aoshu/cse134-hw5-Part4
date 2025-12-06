@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="icon" href="SCicon.png" type="image/png">
+  <meta charset="utf-8">
+  <title>Experiments — Required Elements</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    nav { border: 1px solid black; display: flex; justify-content: space-between; }
+    header, main, section, footer, figure, dialog { border: 1px solid black; }
+  </style>
+</head>
+<body>
+  <nav aria-label="Main navigation" class="site-nav">
+    <a class="brand vt-link" href="index.html">
+      <b>Shuting Chen</b> — <span>UCSD ECE Student</span>
+    </a>
+
+    <details class="menu">
+      <summary aria-label="Toggle navigation">☰</summary>
+      <menu-items>
+        <a href="resume.html" class="vt-link">Resume</a>
+        <a href="projects.html" class="vt-link">Projects</a>
+        <a href="contact.html" class="vt-link">Contact</a>
+        <a href="form-no-js.html" class="vt-link">FormNoJS</a>
+        <a href="form-with-js.html" class="vt-link">FormWithJS</a>
+      </menu-items>
+    </details>
+  </nav>
+
+  <main>
+    <header>
+      <h1>Experiments (Part 2 Required Elements)</h1>
+    </header>
+
+    <section aria-labelledby="tpl">
+      <h2 id="tpl">1) &lt;template&gt; (stamped content)</h2>
+
+      <template id="cardTmpl">
+        <article>
+          <h3>Template Card</h3>
+          <p>This content came from a &lt;template&gt; element.</p>
+        </article>
+      </template>
+
+      <div id="cardHost">
+      </div>
+    </section>
+
+    <section aria-labelledby="pic">
+      <h2 id="pic">2) &lt;picture&gt;</h2>
+      <figure>
+        <picture>
+          <source media="(min-width: 900px)" srcset="pic-large.jpg" type="image/jpeg">
+          <source media="(min-width: 400px)" srcset="pic.jpg" type="image/jpeg">
+          <img src="pic.jpg" alt="backup" width="240">
+        </picture>
+        <figcaption>Using picture with multiple source breakpoints.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="aud">
+      <h2 id="aud">3) &lt;audio&gt; (with &lt;source&gt;)</h2>
+      <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        <source src="audio.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+      </audio>
+    </section>
+
+    <section aria-labelledby="vid">
+      <h2 id="vid">4) &lt;video&gt; (with &lt;source&gt;)</h2>
+      <video controls width="480" height="270">
+        <source src="111.mp4" type="video/mp4">
+        <source src="clip.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section aria-labelledby="cnv">
+      <h2 id="cnv">5) &lt;canvas&gt; (minimal drawing)</h2>
+      <canvas id="demoCanvas" width="320" height="120" aria-label="Canvas demo with a frame and text"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      📧 <a href="mailto:shc070@ucsd.edu">shc070@ucsd.edu</a> |
+      📞 <a href="tel:+18058860380">+1 (805) 886-0380</a> |
+      <a href="https://www.instagram.com/cc_cst_/?next=%2F" target="_blank" rel="noopener noreferrer">
+        <img src="ins.png" alt="Instagram icon" width="16" height="16"> Instagram
+      </a>
+    </p>
+    <p><small>&copy; 2025 Shuting Chen</small></p>
+  </footer>
+
+  <script>
+    (function () {
+      const tpl = document.getElementById('cardTmpl');
+      const host = document.getElementById('cardHost');
+      if (tpl && host) {
+        host.appendChild(tpl.content.cloneNode(true));
+      }
+    })();
+
+    (function () {
+      const cv = document.getElementById('demoCanvas');
+      if (!cv) return;
+      const ctx = cv.getContext('2d');
+      ctx.fillStyle = '#eee';
+      ctx.fillRect(0, 0, cv.width, cv.height);
+      ctx.strokeStyle = '#000';
+      ctx.strokeRect(10, 10, cv.width - 20, cv.height - 20);
+      ctx.font = '14px sans-serif';
+      ctx.fillStyle = '#000';
+      ctx.fillText('Canvas demo', 110, 65);
+    })();
+  </script>
+</body>
+</html>
+
