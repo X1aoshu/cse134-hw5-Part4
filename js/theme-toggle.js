@@ -238,3 +238,13 @@
     createThemeUI(theme);
   });
 })();
+
+const bar = document.querySelector("progress");
+let value = 0;
+const target = 90;
+
+const timer = setInterval(() => {
+  value++;
+  bar.value = value;
+  if (value >= target) clearInterval(timer);
+}, 15);
