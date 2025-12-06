@@ -329,3 +329,25 @@ main {
   cursor: pointer;
   font-size: 0.85rem;
 }
+
+.skip-link {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -40px;
+  padding: 0.5rem 1rem;
+  background: #111827;
+  color: #f9fafb;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 50;
+  transition: top 0.15s ease, opacity 0.15s ease;
+  opacity: 0;
+}
+
+.skip-link:focus-visible {
+  top: 0.5rem;
+  opacity: 1;
+}
+

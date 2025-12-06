@@ -57,7 +57,7 @@
 }
 
 
-:root[data-theme="custom"] {
+:root[data-theme = "custom"] {
 }
 
 @supports (view-transition-name: root) {

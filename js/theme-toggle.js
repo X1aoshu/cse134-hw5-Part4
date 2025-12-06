@@ -121,7 +121,6 @@
         <div class="theme-presets">
           <button type="button" data-theme-choice="light">Light</button>
           <button type="button" data-theme-choice="dark">Dark</button>
-          
         </div>
       </div>
       <hr>
